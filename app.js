@@ -7,7 +7,7 @@ const PORT = 4000;
  
 app.use(express.json());
  
-const BASE_URL = "http://tunica.zapto.org:11439"; // Replace with your base URL
+const BASE_URL = "http://192.168.1.48:11439"; // Replace with your base URL
  
 async function scrapeSingleUrl(url) {
   console.log("HJEHEH");
@@ -22,7 +22,7 @@ async function scrapeSingleUrl(url) {
       const mainContentText = $("article").text();
  
       // Define chunk size as needed
-      const chunkSize = 2000;
+      const chunkSize = 4000;
  
       // Split main content text into chunks
       const contentChunks = chunkText(mainContentText, chunkSize);
@@ -86,41 +86,6 @@ app.post("/scrape", async (req, res) => {
  
     const extractedData=await scrapeSingleUrl(url);
  
-//     let data = JSON.stringify(extractedData); // Your provided data
- 
-// // Remove the trailing "has context menu" string
-// data = data.replace(' has context menu', '');
- 
-// // Split the data by each recipe section
-// const sections = data.split('", "');
- 
-// // Initialize an empty array to store the JSON objects
-// let jsonResult = [];
- 
-// // Loop through each section and convert it to JSON
-// sections.forEach(section => {
-//     // Replace unnecessary characters from the section
-//     section = section.replace(/"|{|}|[\n\r]+/g, '');
- 
-//     // Split the section by "|"
-//     const fields = section.split('|').map(field => field.trim());
- 
-//     // Extract the keys and values
-//     const keys = fields.filter((_, index) => index % 2 === 0);
-//     const values = fields.filter((_, index) => index % 2 !== 0);
- 
-//     // Create JSON object
-//     let jsonObject = {};
-//     keys.forEach((key, index) => {
-//         jsonObject[key] = values[index];
-//     });
- 
-//     // Push JSON object to the result array
-//     jsonResult.push(jsonObject);
-// });
- 
-// // Print or use the JSON result
-// console.log(JSON.stringify(jsonResult, null, 2));
  
     res.json(extractedData);
   } catch (error) {
