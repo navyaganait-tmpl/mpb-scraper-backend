@@ -45,8 +45,8 @@ async function scrapeSingleUrl(url) {
       * Do not provide me with a script or a code but the information I need
       * If a detail is missing, return null.
       * Do not generate data of your own and send it in the output generated
-  **Task:** convert the extracted data into table format
-  **Format:** Table Format for md
+  **Task:** convert the extracted data into JSON format
+  **Format:** JSON Format
               `;
  
         // Send text content chunk and Mistral instructions for processing
