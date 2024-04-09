@@ -1,11 +1,13 @@
 const express = require("express");
 const axios = require("axios");
 const cheerio = require("cheerio");
+const cors = require("cors");
  
 const app = express();
 const PORT = 4000;
  
 app.use(express.json());
+app.use(cors());
  
 const BASE_URL = "http://tunica.zapto.org:11439"; // Replace with your base URL
  
@@ -74,6 +76,7 @@ function chunkText(text, size) {
   }
   return chunks;
 }
+
  
 // Endpoint to scrape a URL
 app.post("/scrape", async (req, res) => {
