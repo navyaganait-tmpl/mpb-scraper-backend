@@ -7,7 +7,7 @@ const PORT = 4000;
  
 app.use(express.json());
  
-const BASE_URL = "http://192.168.1.48:11439"; // Replace with your base URL
+const BASE_URL = "http://tunica.zapto.org:11439"; // Replace with your base URL
  
 async function scrapeSingleUrl(url) {
   console.log("HJEHEH");
