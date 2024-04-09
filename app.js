@@ -24,7 +24,7 @@ async function scrapeSingleUrl(url) {
       const mainContentText = $("article").text();
  
       // Define chunk size as needed
-      const chunkSize = 2000;
+      const chunkSize = 1800;
  
       // Split main content text into chunks
       const contentChunks = chunkText(mainContentText, chunkSize);
