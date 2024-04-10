@@ -24,7 +24,7 @@ async function scrapeSingleUrl(url) {
       const mainContentText = $("article").text();
  
       // Define chunk size as needed
-      const chunkSize = 500;
+      const chunkSize = 2000;
  
       // Split main content text into chunks
       const contentChunks = chunkText(mainContentText, chunkSize);
@@ -45,6 +45,8 @@ async function scrapeSingleUrl(url) {
       * Do not provide me with a script or a code but the information I need
       * If a detail is missing, return null.
       * Do not generate data of your own and send it in the output generated
+      * Do not include image in the output
+      * Do not include output 
   **Task:** convert the extracted data into table format
   **Format:** Table Format for md
               `;
